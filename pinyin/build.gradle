@@ -1,4 +1,9 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+tasks.withType(Javadoc).all {
+    enabled =false
+}
 
 android {
     compileSdkVersion 25
@@ -26,3 +31,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
 }
+
+publish {
+    userOrg = 'vitaviva'
+    groupId = 'com.vitaviva'
+    artifactId = 'pinyin'
+    publishVersion = '1.0.0'
+    desc = 'A Pinyin Utility Library by Unicode'
+    website = 'https://github.com/vitaviva/Pinyin'
+}
+
